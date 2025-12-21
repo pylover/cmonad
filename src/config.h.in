@@ -1,0 +1,12 @@
+/* copyright <w2kw@yahoo.com> */
+#ifndef CORE_CONFIG_H_IN_
+#define CORE_CONFIG_H_IN_
+
+
+/* version */
+#define UTUN_VERSION_MAJOR "@PROJECT_VERSION_MAJOR@"
+#define UTUN_VERSION_MINOR "@PROJECT_VERSION_MINOR@"
+#define UTUN_VERSION "@PROJECT_VERSION@"
+
+
+#endif  // CORE_CONFIG_H_IN_
