@@ -18,13 +18,16 @@
  */
 #ifndef SRC_MONAD_H_
 #define SRC_MONAD_H_
-/* generic stuff (must included once) */
+
+
+/* (private api) generic stuff (must included once) */
 #define LNAME_PASTE(x, y) x ## y
 #define LNAME_EVAL(x, y)  LNAME_PASTE(x, y)
 #define LNAME(n) LNAME_EVAL(T, n)
 #define LTYPE() LNAME_EVAL(T, _t)
 
 
+/* (public) shorthands */
 #define MONAD_RUN(m, v) (m)->run(m, v)
 #define MONAD_RETURN(m, v) if ((m)->next) (m)->next->run((m)->next, v); return
 #define MONAD_CHAIN(a, b) (a)->next = b
@@ -33,7 +36,10 @@
 #endif  // SRC_MONAD_H_
 
 
-/* generic<template> definitions */
+/* generic<template> definitions, and must be defined on every inclue without
+ * any header guard and the T preprocessor variable have to be undef/define
+ * before including this file.
+ */
 struct LNAME(M);
 typedef void (*LNAME(_monad_t)) (struct LNAME(M)*, LTYPE());
 struct LNAME(M) {
