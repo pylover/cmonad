@@ -11,11 +11,6 @@ list(TRANSFORM profilerules APPEND -profile)
 add_custom_target(profile_tests DEPENDS ${profilerules})
 
 
-# include_directories(
-#   ${PROJECT_SOURCE_DIR}/include
-#   ${PROJECT_SOURCE_DIR}/carrot
-# )
-
 # add_library(fixtures OBJECT fixtures.c fixtures.h)
 
 
