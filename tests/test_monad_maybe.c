@@ -68,8 +68,8 @@ test_intM() {
     struct maybeM doubl = {_doubl};
     struct maybeM succ = {_succ};
 
-    MONAD_CHAIN(&half, &doubl);
-    MONAD_CHAIN(&doubl, &succ);
+    MONAD_BIND(&half, &doubl);
+    MONAD_BIND(&doubl, &succ);
     struct maybe v = {false, 10};
     MONAD_RUN(&half, v);
 }

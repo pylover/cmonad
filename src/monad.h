@@ -30,7 +30,7 @@
 /* (public) shorthands */
 #define MONAD_RUN(m, v) (m)->run(m, v)
 #define MONAD_RETURN(m, v) if ((m)->next) (m)->next->run((m)->next, v); return
-#define MONAD_CHAIN(a, b) (a)->next = b
+#define MONAD_BIND(a, b) (a)->next = b
 
 
 #endif  // SRC_MONAD_H_

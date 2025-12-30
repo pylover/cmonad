@@ -56,20 +56,12 @@ _done(struct otherM *m, int v) {
 
 static void
 test_intM() {
-    struct otherM add2 = {
-        .run = (int_monad_t)_add,
-        .other = 2
-    };
-    struct otherM div4 = {
-        .run = (int_monad_t)_div,
-        .other = 4
-    };
-    struct intM tail = {
-        .run = (int_monad_t)_done,
-    };
+    struct otherM add2 = {{(int_monad_t)_add}, 2};
+    struct otherM div4 = {{(int_monad_t)_div}, 4};
+    struct intM tail = {(int_monad_t)_done};
 
-    MONAD_CHAIN(&add2, (struct intM*)&div4);
-    MONAD_CHAIN(&div4, &tail);
+    MONAD_BIND(&add2, (struct intM*)&div4);
+    MONAD_BIND(&div4, &tail);
     MONAD_RUN((struct intM*)&add2, 10);
 }
 
