@@ -37,6 +37,13 @@ include_directories(
 add_subdirectory(src)
 
 
+# Install
+install(FILES 
+  ${CMAKE_BINARY_DIR}/src/cmonad.h
+  DESTINATION "include"
+)
+
+
 # test
 enable_testing()
 add_subdirectory(tests)

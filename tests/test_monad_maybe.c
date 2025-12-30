@@ -30,7 +30,7 @@ typedef struct maybe {
 } maybe_t;
 #undef T
 #define T maybe
-#include "monad.h"
+#include "cmonad.h"
 
 
 static void

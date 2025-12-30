@@ -26,7 +26,7 @@
 typedef int int_t;
 #undef T
 #define T int
-#include "monad.h"
+#include "cmonad.h"
 
 
 struct otherM {

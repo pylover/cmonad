@@ -16,8 +16,14 @@
  *
  *  Author: Vahid Mardani <vahid.mardani@gmail.com>
  */
-#ifndef SRC_MONAD_H_
-#define SRC_MONAD_H_
+#ifndef SRC_CMONAD_H_IN_
+#define SRC_CMONAD_H_IN_
+
+
+/* version */
+#define CMONAD_VERSION_MAJOR "@PROJECT_VERSION_MAJOR@"
+#define CMONAD_VERSION_MINOR "@PROJECT_VERSION_MINOR@"
+#define CMONAD_VERSION "@PROJECT_VERSION@"
 
 
 /* (private api) generic stuff (must included once) */
@@ -33,7 +39,7 @@
 #define MONAD_BIND(a, b) (a)->next = b
 
 
-#endif  // SRC_MONAD_H_
+#endif  // SRC_CMONAD_H_IN_
 
 
 /* generic<template> definitions, and must be defined on every inclue without
